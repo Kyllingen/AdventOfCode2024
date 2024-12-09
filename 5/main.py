@@ -4,6 +4,16 @@ rules = {}
 pages = []
 total_sum = 0
 
+# def reorderPage(page):
+#     ''' reorder the page'''
+#     for i in range(0, len(page)):
+#         page_num = str(page[i])
+#         # check of number from page list has a ruleset
+#         if page_num in rules:
+#             for rule in rules[page_num]:
+#                 if rule in page and not i < page.index(rule):
+#                     return False
+
 def checkPageRules(page):
     ''' check rules and verify index'''
     for i in range(0, len(page)):
@@ -13,8 +23,7 @@ def checkPageRules(page):
            for rule in rules[page_num]:
                if rule in page and not i < page.index(rule):
                    return False
-           
-               
+              
     return True
                
 
@@ -43,6 +52,8 @@ for page in pages:
     if res:
       middle_index = int(len(page)/2)
       total_sum += page[middle_index]  
+    #else:
+    #    reorderPage(page)
         
                 
 print(total_sum)
